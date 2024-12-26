@@ -1,0 +1,12 @@
+{
+    "autoload": {
+        "psr-4": {
+            "App\\": "App",
+            "Controllers\\": "App/Controllers",
+            "Core\\": "vendor/Core"
+        }
+    },
+    "require": {
+        "gabordemooij/redbean": "^v5.7.4"
+    }
+}

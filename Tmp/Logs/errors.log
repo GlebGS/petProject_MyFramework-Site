@@ -1,0 +1,64 @@
+[2024-12-26 22:28:40] Текст ошибки: Не удалось подключиться в БАЗЕ ДАННЫХ | Файл: /home/sites/MarlinDev/vendor/Core/DB.php | Строка: 21
+=================
+[2024-12-26 22:28:41] Текст ошибки: Undefined array key "controller" | Файл: /home/sites/MarlinDev/vendor/Core/Router.php | Строка: 92
+=================
+[2024-12-26 22:29:02] Текст ошибки: Undefined array key "controller" | Файл: /home/sites/MarlinDev/vendor/Core/Router.php | Строка: 92
+=================
+[2024-12-26 22:29:06] Текст ошибки: Undefined array key "controller" | Файл: /home/sites/MarlinDev/vendor/Core/Router.php | Строка: 92
+=================
+[2024-12-26 22:29:08] Текст ошибки: Undefined array key "controller" | Файл: /home/sites/MarlinDev/vendor/Core/Router.php | Строка: 92
+=================
+[2024-12-26 22:34:01] Текст ошибки: Undefined array key "controller" | Файл: /home/sites/MarlinDev/vendor/Core/Router.php | Строка: 92
+=================
+[2024-12-26 22:34:03] Текст ошибки: Undefined array key "controller" | Файл: /home/sites/MarlinDev/vendor/Core/Router.php | Строка: 92
+=================
+[2024-12-26 22:34:03] Текст ошибки: Undefined array key "controller" | Файл: /home/sites/MarlinDev/vendor/Core/Router.php | Строка: 92
+=================
+[2024-12-26 22:34:15] Текст ошибки: Undefined array key "controller" | Файл: /home/sites/MarlinDev/vendor/Core/Router.php | Строка: 92
+=================
+[2024-12-26 22:34:33] Текст ошибки: Undefined array key "controller" | Файл: /home/sites/MarlinDev/vendor/Core/Router.php | Строка: 92
+=================
+[2024-12-26 22:34:34] Текст ошибки: Undefined array key "controller" | Файл: /home/sites/MarlinDev/vendor/Core/Router.php | Строка: 92
+=================
+[2024-12-26 22:35:49] Текст ошибки: Undefined array key "controller" | Файл: /home/sites/MarlinDev/vendor/Core/Router.php | Строка: 92
+=================
+[2024-12-26 22:36:21] Текст ошибки: Undefined array key "controller" | Файл: /home/sites/MarlinDev/vendor/Core/Router.php | Строка: 92
+=================
+[2024-12-26 22:36:34] Текст ошибки: Undefined array key "controller" | Файл: /home/sites/MarlinDev/vendor/Core/Router.php | Строка: 92
+=================
+[2024-12-26 22:36:34] Текст ошибки: Undefined array key "controller" | Файл: /home/sites/MarlinDev/vendor/Core/Router.php | Строка: 92
+=================
+[2024-12-26 22:36:40] Текст ошибки: Undefined array key "controller" | Файл: /home/sites/MarlinDev/vendor/Core/Router.php | Строка: 92
+=================
+[2024-12-26 22:36:40] Текст ошибки: Undefined array key "controller" | Файл: /home/sites/MarlinDev/vendor/Core/Router.php | Строка: 92
+=================
+[2024-12-26 22:37:02] Текст ошибки: Undefined array key "controller" | Файл: /home/sites/MarlinDev/vendor/Core/Router.php | Строка: 92
+=================
+[2024-12-26 22:37:07] Текст ошибки: Undefined array key "controller" | Файл: /home/sites/MarlinDev/vendor/Core/Router.php | Строка: 92
+=================
+[2024-12-26 22:37:11] Текст ошибки: Undefined array key "controller" | Файл: /home/sites/MarlinDev/vendor/Core/Router.php | Строка: 92
+=================
+[2024-12-26 22:38:24] Текст ошибки: Undefined array key "controller" | Файл: /home/sites/MarlinDev/vendor/Core/Router.php | Строка: 92
+=================
+[2024-12-26 22:38:56] Текст ошибки: Undefined array key "controller" | Файл: /home/sites/MarlinDev/vendor/Core/Router.php | Строка: 92
+=================
+[2024-12-26 22:39:01] Текст ошибки: Класса RegistrationController не существует! | Файл: /home/sites/MarlinDev/vendor/Core/Router.php | Строка: 67
+=================
+[2024-12-26 22:39:01] Текст ошибки: Undefined array key "controller" | Файл: /home/sites/MarlinDev/vendor/Core/Router.php | Строка: 92
+=================
+[2024-12-26 22:39:20] Текст ошибки: Класса RegistrationController не существует! | Файл: /home/sites/MarlinDev/vendor/Core/Router.php | Строка: 67
+=================
+[2024-12-26 22:39:21] Текст ошибки: Undefined array key "controller" | Файл: /home/sites/MarlinDev/vendor/Core/Router.php | Строка: 92
+=================
+[2024-12-26 22:39:35] Текст ошибки: Undefined array key "controller" | Файл: /home/sites/MarlinDev/vendor/Core/Router.php | Строка: 92
+=================
+[2024-12-26 22:39:38] Текст ошибки: Undefined array key "controller" | Файл: /home/sites/MarlinDev/vendor/Core/Router.php | Строка: 92
+=================
+[2024-12-26 22:39:43] Текст ошибки: Undefined array key "controller" | Файл: /home/sites/MarlinDev/vendor/Core/Router.php | Строка: 92
+=================
+[2024-12-26 22:40:26] Текст ошибки: Undefined array key "controller" | Файл: /home/sites/MarlinDev/vendor/Core/Router.php | Строка: 92
+=================
+[2024-12-26 22:40:30] Текст ошибки: Undefined array key "controller" | Файл: /home/sites/MarlinDev/vendor/Core/Router.php | Строка: 92
+=================
+[2024-12-26 22:40:34] Текст ошибки: Undefined array key "controller" | Файл: /home/sites/MarlinDev/vendor/Core/Router.php | Строка: 92
+=================
