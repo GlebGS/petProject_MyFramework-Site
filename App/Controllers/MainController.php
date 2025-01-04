@@ -9,7 +9,7 @@ class MainController extends Controller
     
     public function index()
     {
-        
+        redirect_to("/users");
     }
 
 }

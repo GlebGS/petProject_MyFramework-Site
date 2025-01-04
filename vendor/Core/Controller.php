@@ -1,4 +1,4 @@
-<?php
+<?php 
 
 namespace Core;
 
@@ -7,8 +7,17 @@ abstract class Controller
     public static array $data = [];
     public static array $meta = [];
     public static object $model;
+    public static $user;
 
     public function __construct(public $route = []){}
+
+    public static function checkUser(){
+        if(empty($_SESSION["userID"])){
+            redirect_to("/login");
+        }
+
+        return self::$user = $_SESSION["userID"];
+    }
 
     public static function getModel($route)
     { 
@@ -38,7 +47,6 @@ abstract class Controller
     {
         self::$data = $data;
     }
-
     public static function setMeta($title = '')
     {
         self::$meta = [

@@ -9,7 +9,7 @@ class UserController extends Controller
     
     public function users()
     {
-        
+        self::checkUser();
     }
 
     public function page_login()
