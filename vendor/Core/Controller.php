@@ -9,7 +9,7 @@ abstract class Controller
     public static object $model;
     public static $user;
 
-    public function __construct(public $route = []){}
+    public function __construct(public $route = []){session_start();}
 
     public static function checkUser(){
         if(empty($_SESSION["userID"])){

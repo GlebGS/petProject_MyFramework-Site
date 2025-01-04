@@ -2,8 +2,11 @@
 
 use Core\Router;
 
-// Admin
+// prefix Admin
 Router::add("/admin", ["controller" => "main", "method" => "index", "prefix" => "admin"]);
+
+// prefix Auth
+Router::add("/auth_registration", ["controller" => "auth", "method" => "registration", "prefix" => 'auth']);
 
 // Default
 Router::add("/", ["controller" => "main", "method" => "index", "prefix" => '']);
