@@ -26,9 +26,4 @@ class View
             throw new \Exception("Фала: {$view_file} не существует!", 500);
         }
     }
-
-    public function getMeta()
-    {
-        return "<title>" . $this->meta["title"] . "</title>" . PHP_EOL;
-    }
 }

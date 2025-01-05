@@ -32,20 +32,27 @@
             </a>
         </div>
         <div class="card p-4 border-top-left-radius-0 border-top-right-radius-0">
+            
             <?php if(isset($_SESSION["true_registration"])): ?>
                 <div class="alert alert-success">
                     <?php echo $_SESSION["true_registration"]; unset($_SESSION["true_registration"]); ?>
                 </div>
             <?php endif; ?>
+
+            <?php if(isset($_SESSION["error"])): ?>
+                <div class="alert alert-danger text-dark">
+                    <?php echo $_SESSION["error"]; unset($_SESSION["error"]); ?>
+                </div>
+            <?php endif; ?>
             
-            <form action="">
+            <form action="/auth_login" method="post">
                 <div class="form-group">
                     <label class="form-label" for="username">Email</label>
-                    <input type="email" id="username" class="form-control" placeholder="Эл. адрес" value="">
+                    <input type="email" name="email" id="username" class="form-control" placeholder="Эл. адрес" value="">
                 </div>
                 <div class="form-group">
                     <label class="form-label" for="password">Пароль</label>
-                    <input type="password" id="password" class="form-control" placeholder="" >
+                    <input type="password" name="password" id="password" class="form-control" placeholder="" >
                 </div>
                 <button type="submit" class="btn btn-default float-right">Войти</button>
             </form>

@@ -39,4 +39,21 @@ class AuthController extends Controller
         $_SESSION["true_registration"] = "<strong>Уведомление!</strong> Регистрация успешна.";
         return redirect_to("/login");
     }
+
+    public function login()
+    {
+        $user = self::$model->getUser($_POST);
+
+        if($user){
+            if(password_verify($_POST["password"], $user->password)){
+                $_SESSION["userID"] = $user->id; 
+                $_SESSION["userROLE"] = $user->role;
+
+                redirect_to("/users");
+            }
+        }
+
+        $_SESSION["error"] = "<strong>Уведомление!</strong> Такого пользователя не существует.";
+        redirect_to("/login");
+    }
 }

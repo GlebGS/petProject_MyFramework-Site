@@ -7,6 +7,7 @@ Router::add("/admin", ["controller" => "main", "method" => "index", "prefix" => 
 
 // prefix Auth
 Router::add("/auth_registration", ["controller" => "auth", "method" => "registration", "prefix" => 'auth']);
+Router::add("/auth_login", ["controller" => "auth", "method" => "login", "prefix" => 'auth']);
 
 // Default
 Router::add("/", ["controller" => "main", "method" => "index", "prefix" => '']);

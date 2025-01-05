@@ -7,7 +7,9 @@ abstract class Controller
     public static array $data = [];
     public static array $meta = [];
     public static object $model;
-    public static $user;
+
+    public static $userID;
+    public static $userROLE;
 
     public function __construct(public $route = []){session_start();}
 
@@ -16,7 +18,8 @@ abstract class Controller
             redirect_to("/login");
         }
 
-        return self::$user = $_SESSION["userID"];
+        self::$userID = $_SESSION["userID"];
+        self::$userROLE = $_SESSION["userROLE"];
     }
 
     public static function getModel($route)
