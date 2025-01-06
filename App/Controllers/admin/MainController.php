@@ -9,7 +9,14 @@ class MainController extends Controller
 
     public function index()
     {
-        
+        if($_SESSION["userROLE"] == "admin"){
+            redirect_to("/admin/menu");
+        }
+    }
+
+    public function menu()
+    {
+        $this->checkAdmin();
     }
 
 }

@@ -12,4 +12,10 @@ class MainController extends Controller
         redirect_to("/users");
     }
 
+    public function out()
+    {
+        session_destroy();
+        redirect_to("/login");
+    }
+
 }

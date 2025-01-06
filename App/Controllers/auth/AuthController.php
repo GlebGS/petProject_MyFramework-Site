@@ -56,4 +56,25 @@ class AuthController extends Controller
         $_SESSION["error"] = "<strong>Уведомление!</strong> Такого пользователя не существует.";
         redirect_to("/login");
     }
+
+    public function loginAdmin()
+    {
+        $user = self::$model->getUser($_POST);
+        
+        if($user){
+            if($user->role != "admin"){
+                redirect_to("/admin");
+            }
+            if(!password_verify($_POST["password"], $user->password)){
+                redirect_to("/admin");
+            }
+
+            $_SESSION["userID"] = $user->id; 
+            $_SESSION["userROLE"] = $user->role;
+
+            redirect_to("/admin/menu");
+        }
+
+        redirect_to("/admin");
+    }
 }

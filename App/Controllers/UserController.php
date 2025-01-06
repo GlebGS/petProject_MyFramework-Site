@@ -11,7 +11,7 @@ class UserController extends Controller
     {
         self::checkUser();
 
-        $this->setData(["id" => self::$userID, "role" => self::$userROLE]);
+        $this->setData(["id" => $_SESSION["userID"], "role" => $_SESSION["userROLE"]]);
         $this->setMeta("Главная страница");
     }
 

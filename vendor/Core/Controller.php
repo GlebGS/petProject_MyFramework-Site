@@ -8,18 +8,20 @@ abstract class Controller
     public static array $meta = [];
     public static object $model;
 
-    public static $userID;
-    public static $userROLE;
-
     public function __construct(public $route = []){session_start();}
 
     public static function checkUser(){
         if(empty($_SESSION["userID"])){
             redirect_to("/login");
         }
+    }
 
-        self::$userID = $_SESSION["userID"];
-        self::$userROLE = $_SESSION["userROLE"];
+    public static function checkAdmin(){
+        if(empty($_SESSION["userID"])){
+            redirect_to("/admin");
+        }elseif($_SESSION["userROLE"] != "admin"){
+            redirect_to("/admin");
+        }
     }
 
     public static function getModel($route)
