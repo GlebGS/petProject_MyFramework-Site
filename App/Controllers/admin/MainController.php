@@ -9,8 +9,10 @@ class MainController extends Controller
 
     public function index()
     {
-        if($_SESSION["userROLE"] == "admin"){
-            redirect_to("/admin/menu");
+        if(!empty($_SESSION)){
+            if($_SESSION["userROLE"] == "admin"){
+                redirect_to("/admin/menu");
+            }
         }
     }
 

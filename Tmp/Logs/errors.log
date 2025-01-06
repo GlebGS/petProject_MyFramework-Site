@@ -1402,3 +1402,21 @@
 =================
 [2025-01-06 00:28:07] Текст ошибки: Undefined array key "controller" | Файл: /home/sites/MarlinDev/vendor/Core/Router.php | Строка: 92
 =================
+[2025-01-06 00:28:59] Текст ошибки: Undefined array key "userROLE" | Файл: /home/sites/MarlinDev/App/Controllers/admin/MainController.php | Строка: 12
+=================
+[2025-01-06 00:28:59] Текст ошибки: Undefined array key "controller" | Файл: /home/sites/MarlinDev/vendor/Core/Router.php | Строка: 92
+=================
+[2025-01-06 00:29:00] Текст ошибки: Undefined array key "userROLE" | Файл: /home/sites/MarlinDev/App/Controllers/admin/MainController.php | Строка: 12
+=================
+[2025-01-06 00:29:00] Текст ошибки: Undefined array key "controller" | Файл: /home/sites/MarlinDev/vendor/Core/Router.php | Строка: 92
+=================
+[2025-01-06 00:29:28] Текст ошибки: Undefined array key "userROLE" | Файл: /home/sites/MarlinDev/App/Controllers/admin/MainController.php | Строка: 12
+=================
+[2025-01-06 00:29:29] Текст ошибки: Undefined array key "controller" | Файл: /home/sites/MarlinDev/vendor/Core/Router.php | Строка: 92
+=================
+[2025-01-06 00:29:52] Текст ошибки: Undefined array key "controller" | Файл: /home/sites/MarlinDev/vendor/Core/Router.php | Строка: 92
+=================
+[2025-01-06 00:29:52] Текст ошибки: Undefined array key "controller" | Файл: /home/sites/MarlinDev/vendor/Core/Router.php | Строка: 92
+=================
+[2025-01-06 00:29:57] Текст ошибки: Undefined array key "controller" | Файл: /home/sites/MarlinDev/vendor/Core/Router.php | Строка: 92
+=================
