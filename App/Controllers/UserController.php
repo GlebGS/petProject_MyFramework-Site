@@ -6,13 +6,13 @@ use Core\Controller;
 
 class UserController extends Controller
 {
-    
     public function users()
     {
         self::checkUser();
 
-        $this->setData(["id" => $_SESSION["userID"], "role" => $_SESSION["userROLE"]]);
-        $this->setMeta("Главная страница");
+        $this->setUsers(self::$model->getAllUsers());
+        $this->setData(["user_id" => $_SESSION["userID"], "role" => $_SESSION["userROLE"]]);
+        $this->setMeta("Главная страница", self::$users);
     }
 
     public function page_login(){}

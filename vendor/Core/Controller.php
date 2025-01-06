@@ -5,6 +5,7 @@ namespace Core;
 abstract class Controller
 {
     public static array $data = [];
+    public static array $users = [];
     public static array $meta = [];
     public static object $model;
 
@@ -52,10 +53,15 @@ abstract class Controller
     {
         self::$data = $data;
     }
-    public static function setMeta($title = '')
+    public static function setUsers($users)
+    {
+        self::$users = $users;
+    }
+    public static function setMeta($title = '', $users = [])
     {
         self::$meta = [
-            "title" => $title
+            "title" => $title,
+            $users
         ];
     }
 }
