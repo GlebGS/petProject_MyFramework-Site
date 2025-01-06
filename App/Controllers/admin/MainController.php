@@ -9,16 +9,13 @@ class MainController extends Controller
 
     public function index()
     {
-        if(!empty($_SESSION)){
-            if($_SESSION["userROLE"] == "admin"){
-                redirect_to("/admin/menu");
-            }
-        }
+        $this->setMeta("Вход администратора");
     }
 
     public function menu()
     {
         $this->checkAdmin();
+        $this->setMeta("Главная страница администратора");
     }
 
 }

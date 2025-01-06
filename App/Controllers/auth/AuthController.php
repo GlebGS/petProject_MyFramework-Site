@@ -9,27 +9,32 @@ class AuthController extends Controller
 {
     public function registration()
     {
-        if(mb_strlen($_POST["name"]) < 4){
+        if(mb_strlen($_POST["name"]) < 4)
+        {
             $_SESSION["error"] = "<strong>Уведомление!</strong> Короткое имя! Минимум 4 символа.";
             return redirect_to("/registration");
         }
 
-        if(!preg_match("/^(?:[a-z0-9]+(?:[-_.]?[a-z0-9]+)?@[a-z0-9_.-]+(?:\.?[a-z0-9]+)?\.[a-z]{2,5})$/i", $_POST["email"])){
+        if(!preg_match("/^(?:[a-z0-9]+(?:[-_.]?[a-z0-9]+)?@[a-z0-9_.-]+(?:\.?[a-z0-9]+)?\.[a-z]{2,5})$/i", $_POST["email"]))
+        {
             $_SESSION["error"] = "<strong>Уведомление!</strong> Не корректный EMAIL.";
             return redirect_to("/registration");
         }
 
-        if(self::$model->verifyEmail($_POST)){
+        if(self::$model->verifyEmail($_POST))
+        {
             $_SESSION["error"] = "<strong>Уведомление!</strong> Пользователь с таким EMAIL уже существует.";
             return redirect_to("/registration");
         }
 
-        if(mb_strlen($_POST["password"]) < 8){
+        if(mb_strlen($_POST["password"]) < 8)
+        {
             $_SESSION["error"] = "<strong>Уведомление!</strong> Короткий пароль! Минимум 8 символов.";
             return redirect_to("/registration");
         }
 
-        if($_POST["password2"] != $_POST["password"]){
+        if($_POST["password2"] != $_POST["password"])
+        {
             $_SESSION["error"] = "<strong>Уведомление!</strong> Пароли не совподают.";
             return redirect_to("/registration");
         }
@@ -37,6 +42,7 @@ class AuthController extends Controller
         self::$model->regUser($_POST);
 
         $_SESSION["true_registration"] = "<strong>Уведомление!</strong> Регистрация успешна.";
+        
         return redirect_to("/login");
     }
 
@@ -44,8 +50,10 @@ class AuthController extends Controller
     {
         $user = self::$model->getUser($_POST);
 
-        if($user){
-            if(password_verify($_POST["password"], $user->password)){
+        if($user)
+        {
+            if(password_verify($_POST["password"], $user->password))
+            {
                 $_SESSION["userID"] = $user->id; 
                 $_SESSION["userROLE"] = $user->role;
 
@@ -61,11 +69,14 @@ class AuthController extends Controller
     {
         $user = self::$model->getUser($_POST);
         
-        if($user){
-            if($user->role != "admin"){
+        if($user)
+        {
+            if($user->role != "admin")
+            {
                 redirect_to("/admin");
             }
-            if(!password_verify($_POST["password"], $user->password)){
+            if(!password_verify($_POST["password"], $user->password))
+            {
                 redirect_to("/admin");
             }
 

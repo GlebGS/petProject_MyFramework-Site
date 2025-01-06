@@ -33,20 +33,24 @@ class ErrorHandler
 
     protected function displayError($errno, $errstr, $errfile, $errline, $responce = 500)
     {
-        if ($responce == 0) {
+        if ($responce == 0) 
+        {
             $responce = 404;
         }
         
         http_response_code($responce);
         
-        if ($responce == 404 && !DEBUG) {
+        if ($responce == 404 && !DEBUG) 
+        {
             require WWW . "/error_page/404.php";
             die;
         }
         
-        if (DEBUG) {
+        if (DEBUG) 
+        {
             require WWW . "/error_page/dev.php";
-        } else {
+        } else 
+        {
             require WWW . "/error_page/prod.php";
         }
         
@@ -57,11 +61,13 @@ class ErrorHandler
     {
         $error = error_get_last();
         
-        if (!empty($error) && $error['type'] & (E_ERROR | E_PARSE | E_COMPILE_ERROR | E_CORE_ERROR)) {
+        if (!empty($error) && $error['type'] & (E_ERROR | E_PARSE | E_COMPILE_ERROR | E_CORE_ERROR)) 
+        {
             $this->logError($error['message'], $error['file'], $error['line']);
             ob_end_clean();
             $this->displayError($error['type'], $error['message'], $error['file'], $error['line']);
-        } else {
+        } else 
+        {
             ob_end_flush();
         }
     }

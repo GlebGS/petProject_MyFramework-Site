@@ -50,20 +50,19 @@ class Router
 
         if(class_exists(self::$pathController))
         {
-            // вызываем объект класса
             $controllerObject = new self::$pathController(self::$route);
 
-            if(method_exists($controllerObject, $action)){
-                // Вызов модели
+            if(method_exists($controllerObject, $action))
+            {
                 $controllerObject->getModel(self::$route);
-                // Вызов метод класса
                 $controllerObject->$action();
-                // Вызов вида
                 $controllerObject->getView(self::$route);
-            }else{
+            }else
+            {
                 throw new Exception("Метод " . self::$controller . "::" . $action . " не найден!", 500);
             }
-        }else{
+        }else
+        {
             throw new Exception("Класса " . self::$controller . " не существует!", 500);
         }
     }
@@ -72,25 +71,28 @@ class Router
     {
         $uri = self::removeQueryString($uri);
 
-        // Если текущий маршрут есть в таблице маршрутов, то записать его в self::$route
         foreach(self::$routes as $path => $route)
         {
-            if($path == $uri){
-                foreach($route as $k => $v){
+            if($path == $uri)
+            {
+                foreach($route as $k => $v)
+                {
                     $route[$k] = $v;
                     self::$route = $route;
                 }
             }
         }
-        // Формирование префикса в пути к контроллеру
-        if(!empty(self::$route["prefix"])) {
+
+        if(!empty(self::$route["prefix"])) 
+        {
             $pathControllerPrefix = '' . self::$route["prefix"] . '\\';
-        }else{
+        }else
+        {
             $pathControllerPrefix = '';
         }
-        // controller формат CamelCase
+
         self::$controller = upperCamelCase(self::$route["controller"]) . "Controller";
-        // путь к контроллеру
+
         self::$pathController = "App\Controllers\\" . $pathControllerPrefix . self::$controller;
 
         return self::dispatch();

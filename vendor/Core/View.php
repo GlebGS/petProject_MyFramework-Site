@@ -11,7 +11,8 @@ class View
 
     public function render($data)
     {
-        if(is_array($data)){
+        if(is_array($data))
+        {
             extract($data);
         }
 
@@ -20,15 +21,17 @@ class View
 
         $view_file = VIEW . $view_prefix . "/{$view}.php";
 
-        if(is_file($view_file)){
+        if(is_file($view_file))
+        {
             require_once $view_file; 
-        }else{
+        }else
+        {
             throw new \Exception("Фала: {$view_file} не существует!", 500);
         }
     }
 
     public function printUsers()
     {
-        return require_once LAYOUT . "/allUsers.php";
+        return require_once LAYOUT . "/printUsers.php";
     }
 }

@@ -7,7 +7,8 @@ function debug($data)
     echo "</pre>";
 }
 
-function redirect_to($path, $parameter = ''){
+function redirect_to($path, $parameter = '')
+{
     header("Location: {$path}{$parameter}");
     die;
 }

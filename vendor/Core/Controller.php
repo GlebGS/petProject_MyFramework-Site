@@ -5,22 +5,27 @@ namespace Core;
 abstract class Controller
 {
     public static array $data = [];
-    public static array $users = [];
     public static array $meta = [];
     public static object $model;
 
-    public function __construct(public $route = []){session_start();}
+    public function __construct(public $route = [])
+    {
+        session_start();
+    }
 
     public static function checkUser(){
-        if(empty($_SESSION["userID"])){
+        if(empty($_SESSION["userID"]))
+        {
             redirect_to("/login");
         }
     }
 
     public static function checkAdmin(){
-        if(empty($_SESSION["userID"])){
+        if(empty($_SESSION["userID"]))
+        {
             redirect_to("/admin");
-        }elseif($_SESSION["userROLE"] != "admin"){
+        }elseif($_SESSION["userROLE"] != "admin")
+        {
             redirect_to("/admin");
         }
     }
@@ -32,7 +37,8 @@ abstract class Controller
         if(empty($route["prefix"]))
         {
             $modelPrefix = '';
-        }else{
+        }else
+        {
             $modelPrefix = '' . $route["prefix"] . '\\';
         }
 
@@ -52,10 +58,6 @@ abstract class Controller
     public static function setData($data)
     {
         self::$data = $data;
-    }
-    public static function setUsers($users)
-    {
-        self::$users = $users;
     }
     public static function setMeta($title = '', $users = [])
     {

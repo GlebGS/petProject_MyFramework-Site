@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Admin</title>
+    <title><?= $this->meta["title"]; ?></title>
 </head>
     <style>
         @import url(https://fonts.googleapis.com/css?family=Exo:100,200,400);
@@ -38,7 +38,7 @@
             bottom: -40px;
             width: 100% auto;
             height: 100% auto;
-            background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,rgba(0,0,0,0)), color-stop(100%,rgba(0,0,0,0.65))); /* Chrome,Safari4+ */
+            background: rgba(0,0,0,1);            
             z-index: 1;
             opacity: 0.7;
         }
@@ -160,7 +160,6 @@
         <input type="submit" value="Вход">
     </div>
 </form>
-    
 
 </body>
 </html>
