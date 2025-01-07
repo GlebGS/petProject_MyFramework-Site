@@ -26,4 +26,5 @@ class Auth extends Model
     {
         return R::findOne("users", "email = ?", array($data["email"]));
     }
+    
 }

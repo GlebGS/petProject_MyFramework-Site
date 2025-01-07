@@ -7,8 +7,23 @@ use Core\Model;
 
 class User extends Model
 {
-    public function getAllUsers() 
+    public function getAllDataUsers() 
     {
-        return R::findAll("users");
+
+        return R::getAll("
+            SELECT * FROM users
+            INNER JOIN users_data
+                ON users_data.user_id = id
+            WHERE users.id = id
+        ");
+    }
+    public function getUserById($id)
+    {
+        return R::getAll("
+            SELECT * FROM users
+            INNER JOIN users_data
+                ON users_data.user_id = {$id}
+            WHERE users.id = {$id}
+        ");
     }
 }

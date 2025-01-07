@@ -9,8 +9,7 @@ class UserController extends Controller
     public function users()
     {
         self::checkUser();
-        
-        $this->setMeta("Главная страница", self::$model->getAllUsers());
+        $this->setMeta("Главная страница", self::$model->getAllDataUsers(), self::$model->getUserById($_SESSION["userID"]));
     }
 
     public function page_login(){}
