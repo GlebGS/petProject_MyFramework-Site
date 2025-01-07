@@ -12,17 +12,17 @@ class User extends Model
 
         return R::getAll("
             SELECT * FROM users
-            INNER JOIN users_data
-                ON users_data.user_id = id
-            WHERE users.id = id
+            INNER JOIN data
+                ON data.id = users.id
+            WHERE users.id = data.id
         ");
     }
     public function getUserById($id)
     {
         return R::getAll("
             SELECT * FROM users
-            INNER JOIN users_data
-                ON users_data.user_id = {$id}
+            INNER JOIN data
+                ON data.id = {$id}
             WHERE users.id = {$id}
         ");
     }

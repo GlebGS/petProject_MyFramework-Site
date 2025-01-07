@@ -9,12 +9,17 @@ class Auth extends Model
 {
     public function regUser($data)
     {
-        $user = R::dispense("users");
-		$user->name=$data["name"];
-		$user->email=$data["email"];
-		$user->password= password_hash($data["password"], PASSWORD_DEFAULT);
+        $users = R::dispense('users');
+
+        $users->name        = h($data["name"]);
+		$users->email       = h($data["email"]);
+		$users->password    = h(password_hash($data["password"], PASSWORD_DEFAULT));
+
+        list($id, $user_id) = R::dispense('data', 2);
         
-		R::store($user);
+        $users->ownBuilding = array($id, $user_id);
+
+        R::store($users);
     }
 
     public function verifyEmail($data)

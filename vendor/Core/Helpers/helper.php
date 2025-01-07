@@ -7,6 +7,11 @@ function debug($data)
     echo "</pre>";
 }
 
+function h($str)
+{
+    return htmlspecialchars($str);
+}
+
 function redirect_to($path, $parameter = '')
 {
     header("Location: {$path}{$parameter}");
