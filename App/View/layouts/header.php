@@ -28,6 +28,9 @@
                 </ul>
                 <ul class="navbar-nav ml-auto">
                     <li class="nav-item">
+                        <a class="nav-link" href="/admin/menu">Админка</a>
+                    </li>
+                    <li class="nav-item">
                         <a class="nav-link" href="/out">Выйти</a>
                     </li>
                 </ul>

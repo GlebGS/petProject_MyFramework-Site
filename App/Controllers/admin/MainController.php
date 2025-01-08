@@ -15,7 +15,7 @@ class MainController extends Controller
     public function menu()
     {
         $this->checkAdmin();
-        $this->setMeta("Главная страница администратора");
+        $this->setMeta("Главная страница администратора", self::$model->getAllDataUsers(), self::$model->getUserById($_SESSION["userID"]));
     }
 
 }

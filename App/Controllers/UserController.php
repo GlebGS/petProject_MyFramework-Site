@@ -16,4 +16,7 @@ class UserController extends Controller
 
     public function page_register(){}
 
+    public function create_user(){}
+
+    public function page_profile(){}
 }

@@ -20,3 +20,6 @@ Router::add("/users", ["controller" => "user", "method" => "users", "prefix" => 
 
 Router::add("/login", ["controller" => "user", "method" => "page_login", "prefix" => '']);
 Router::add("/registration", ["controller" => "user", "method" => "page_register", "prefix" => '']);
+
+Router::add("/create", ["controller" => "user", "method" => "create_user", "prefix" => '']);
+Router::add("/profile", ["controller" => "user", "method" => "page_profile", "prefix" => '']);
