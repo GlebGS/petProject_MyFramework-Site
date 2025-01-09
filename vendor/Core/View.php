@@ -34,4 +34,9 @@ class View
     {
         return require_once LAYOUT . "/printUsers.php";
     }
+
+    public function printAdminUsers()
+    {
+        return require_once LAYOUT . "/printAdminUsers.php";
+    }
 }

@@ -7,23 +7,23 @@ use Core\Model;
 
 class Main extends Model
 {
-    public function getAllDataUsers() 
+    public function getAllDataUsers()
     {
-
-        return R::getAll("
-            SELECT * FROM users
-            INNER JOIN data
-                ON data.id = users.id
-            WHERE users.id = data.id
-        ");
+        return R::getAll("SELECT * FROM users, data WHERE users.id = data.users_id");
     }
+
     public function getUserById($id)
     {
         return R::getAll("
             SELECT * FROM users
-            INNER JOIN data
-                ON data.id = {$id}
+            LEFT JOIN data
+                ON data.users_id = {$id}
             WHERE users.id = {$id}
         ");
+    }
+
+    public function countOnlineUsers()
+    {
+        return R::getAll("SELECT COUNT(*) FROM data WHERE status = 'success';");
     }
 }
