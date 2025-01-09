@@ -19,7 +19,6 @@
 
     <tr>
         <td>
-
             <span class="user-subhead"><?= $user["id"]; ?></span>
         </td>
         <td>

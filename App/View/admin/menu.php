@@ -1,6 +1,5 @@
 <!doctype html>
 <html class="no-js" lang="en">
-
 <head>
     <meta charset="utf-8">
     <title><?= $this->meta["title"]; ?></title>
@@ -8,7 +7,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" type="text/css" href="//netdna.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
-
 </head>
 <body>
     <div class="container-fluid">
@@ -24,7 +22,6 @@
                                 <i class="fs-4 bi-house"></i> <span class="ms-1 d-none d-sm-inline">Главная</span>
                             </a>
                         </li>
-
                         <li>
                             <a href="/create" data-bs-toggle="collapse" class="nav-link px-0 align-middle">
                                 <i class="fs-4 bi-speedometer2"></i> <span class="ms-1 d-none d-sm-inline">Создать пользователя</span> </a>
@@ -62,11 +59,9 @@
                                                     <th><span>&ensp;</span></th>
                                                 </tr>
                                             </thead>
-                                            
                                             <tbody>
                                                 <?php $this->printAdminUsers(); ?>
                                             </tbody>
-
                                         </table>
                                     </div>
                                 </div>
@@ -78,5 +73,4 @@
         </div>
     </div>
 </body>
-
 </html>
