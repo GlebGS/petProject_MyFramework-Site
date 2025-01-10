@@ -8,8 +8,6 @@ use Core\Controller;
 class AuthController extends Controller
 {
 
-    public static array $error = [];
-
     public function registration()
     {
         if(mb_strlen($_POST["name"]) < 4)
@@ -65,6 +63,7 @@ class AuthController extends Controller
         }
 
         $_SESSION["error"] = "<strong>Уведомление!</strong> Такого пользователя не существует.";
+
         redirect_to("/login");
     }
 
@@ -90,6 +89,13 @@ class AuthController extends Controller
         }
 
         redirect_to("/admin");
+    }
+
+    public function statusController() 
+    {
+        debug($_FILES);
+
+        debug(IMG . "/" . $_FILES["file"]["name"]);
     }
 
     public function create_user()

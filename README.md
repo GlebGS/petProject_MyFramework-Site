@@ -85,7 +85,7 @@
         phone varchar(128) DEFAULT NULL,
         address varchar(128) DEFAULT NULL,
         status VARCHAR(32) DEFAULT 'danger',
-        avatar varchar(128) DEFAULT NULL,
+        avatar varchar(128) DEFAULT '/img/avatar/default.png',
         "date" timestamp without time zone NOT NULL DEFAULT CURRENT_TIMESTAMP,
         PRIMARY KEY(id)
     );

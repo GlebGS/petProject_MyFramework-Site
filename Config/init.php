@@ -11,6 +11,7 @@ define("VIEW", ROOT . "/App/View");
 define("LAYOUT", VIEW . "/layouts");
 
 define("WWW", ROOT . "/Public");
+define("IMG", "/img/avatar");
 define("TMP", ROOT . "/Tmp");
 define("LOGS", TMP . "/Logs");
 
