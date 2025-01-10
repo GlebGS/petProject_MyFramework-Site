@@ -42,7 +42,7 @@ class Auth extends Model
         $data->work         = $post["work"];
         $data->phone        = $post["phone"];
         $data->address      = $post["address"];
-        $data->status      = $post["status"];
+        $data->status       = $post["status"];
 
         if($_FILES["file"]["name"] != '')
         {
@@ -53,13 +53,13 @@ class Auth extends Model
             $path_filename_ext = ROOT . "/Public/img/avatar/" . $path["filename"] . "." . $path["extension"];
 
             if (file_exists($path_filename_ext)) {
-                $data->avatar   = "/img/avatar/default.png";
+                $data->avatar = "/img/avatar/default.png";
                 return false;
             }
 
             move_uploaded_file($temp_name,$path_filename_ext);
 
-            $data->avatar   = IMG . "/" . $path["filename"] . "." . $path["extension"];
+            $data->avatar = IMG . "/" . $path["filename"] . "." . $path["extension"];
         }
 
         $data->user_id = R::store($users);
