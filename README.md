@@ -80,13 +80,14 @@
 
     CREATE TABLE "data"(
         id SERIAL NOT NULL,
-        users_id integer,
+        "user_id" integer,
         work varchar(128) DEFAULT NULL,
         phone varchar(128) DEFAULT NULL,
         address varchar(128) DEFAULT NULL,
+        status VARCHAR(32) DEFAULT 'danger',
         avatar varchar(128) DEFAULT NULL,
         "date" timestamp without time zone NOT NULL DEFAULT CURRENT_TIMESTAMP,
         PRIMARY KEY(id)
     );
 
-    CREATE INDEX index_foreignkey_data_users ON "data" USING btree ("users_id");
+    CREATE INDEX index_foreignkey_data_users ON "data" USING btree ("user_id");

@@ -24,7 +24,7 @@
                         </li>
                         <li>
                             <a href="/create" data-bs-toggle="collapse" class="nav-link px-0 align-middle">
-                                <i class="fs-4 bi-speedometer2"></i> <span class="ms-1 d-none d-sm-inline">Создать пользователя</span> </a>
+                                <i class="fs-4 bi-speedometer2"></i> <span class="ms-1 d-none d-sm-inline">Добавить пользователя</span> </a>
                         </li>
                     </ul>
                     <hr>

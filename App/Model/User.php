@@ -9,14 +9,14 @@ class User extends Model
 {
     public function getAllDataUsers()
     {
-        return R::getAll("SELECT * FROM users, data WHERE users.id = data.users_id");
+        return R::getAll("SELECT * FROM users, data WHERE users.id = data.user_id");
     }
     public function getUserById($id)
     {
         return R::getAll("
             SELECT * FROM users
             INNER JOIN data
-                ON data.users_id = {$id}
+                ON data.user_id = {$id}
             WHERE users.id = {$id}
         ");
     }

@@ -7,19 +7,18 @@ use Core\Model;
 
 class Auth extends Model
 {
-    public function regUser($data)
+    public function regUser($post)
     {
-        $users = R::dispense('users');
+        $users = R::dispense("users");
 
-        $users->name        = h($data["name"]);
-		$users->email       = h($data["email"]);
-		$users->password    = h(password_hash($data["password"], PASSWORD_DEFAULT));
+        $users->name        = h($post["name"]);
+		$users->email       = h($post["email"]);
+		$users->password    = h(password_hash($post["password"], PASSWORD_DEFAULT));
 
-        list($id, $user_id) = R::dispense('data', 2);
+        $data = R::dispense("data");
+        $data->user_id = R::store($users);
         
-        $users->ownBuilding = array($id, $user_id);
-
-        R::store($users);
+        R::store($data);
     }
 
     public function verifyEmail($data)
@@ -32,4 +31,19 @@ class Auth extends Model
         return R::findOne("users", "email = ?", array($data["email"]));
     }
     
+    public function createUser($post)
+    {
+        $users = R::dispense("users");
+        $users->name        = $post["name"];
+        $users->email       = $post["email"];
+        $users->password    = password_hash($post["password"], PASSWORD_DEFAULT);
+
+        $data = R::dispense("data");
+        $data->work         = $post["work"];
+        $data->phone        = $post["phone"];
+        $data->address      = $post["address"];
+
+        $data->user_id = R::store($users);
+        R::store($data);
+    }
 }

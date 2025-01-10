@@ -7,6 +7,9 @@ use Core\Controller;
 
 class AuthController extends Controller
 {
+
+    public static array $error = [];
+
     public function registration()
     {
         if(mb_strlen($_POST["name"]) < 4)
@@ -41,7 +44,7 @@ class AuthController extends Controller
 
         self::$model->regUser($_POST);
 
-        $_SESSION["true_registration"] = "<strong>Уведомление!</strong> Регистрация успешна.";
+        $_SESSION["true_registration"] = "Регистрация прошла успешна.";
         
         return redirect_to("/login");
     }
@@ -87,5 +90,31 @@ class AuthController extends Controller
         }
 
         redirect_to("/admin");
+    }
+
+    public function create_user()
+    {
+        if(mb_strlen($_POST["name"]) < 4){
+            $_SESSION["error"] = "<strong>Уведомление!</strong> Слишком короткое имя.";
+            return redirect_to("/create");
+        }
+
+        if(self::$model->verifyEmail($_POST))
+        {
+            $_SESSION["error"] = "<strong>Уведомление!</strong> Пользователь с таким EMAIL уже существует.";
+            return redirect_to("/create");
+        }
+
+        if(mb_strlen($_POST["password"]) < 8)
+        {
+            $_SESSION["error"] = "<strong>Уведомление!</strong> Короткий пароль! Минимум 8 символов.";
+            return redirect_to("/create");
+        }
+
+        self::$model->createUser($_POST);
+
+        $_SESSION["true"] = "Пользователь успешно добавлен.";
+
+        redirect_to("/create");
     }
 }
