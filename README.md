@@ -68,7 +68,7 @@
 Параметры базы данных находятся в файле `/Config/env.php`
 
 ## SQL Создание таблицы 
-    CREATE TABLE users(
+    CREATE TABLE "users"(
         id SERIAL NOT NULL,
         name VARCHAR(32),
         role VARCHAR(12) DEFAULT 'user',
