@@ -21,5 +21,11 @@ class UserController extends Controller
         $this->setMeta("Добавить пользователя");
     }
     
-    public function page_profile(){}
+    public function page_profile(){
+        $this->setMeta("Профиль", [], self::$model->getUserById($_GET["id"]));
+    }
+
+    public function edit(){
+        $this->setMeta("Редактировать", [], self::$model->getUserById($_GET["id"]));
+    }
 }

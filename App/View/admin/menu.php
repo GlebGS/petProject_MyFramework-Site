@@ -13,9 +13,10 @@
         <div class="row flex-nowrap">
             <div class="col-auto col-md-3 col-xl-2 px-sm-2 px-0 bg-dark">
                 <div class="d-flex flex-column align-items-center align-items-sm-start px-3 pt-2 text-white min-vh-100">
-                    <a href="/admin/menu" class="d-flex align-items-center pb-3 mb-md-0 me-md-auto text-white text-decoration-none">
+                    <br>
+                    <label class="d-flex align-items-center pb-3 mb-md-0 me-md-auto text-white text-decoration-none">
                         <span class="fs-5 d-none d-sm-inline">Панель администратора</span>
-                    </a>
+                    </label>
                     <ul class="nav nav-pills flex-column mb-sm-auto mb-0 align-items-center align-items-sm-start" id="menu">
                         <li class="nav-item">
                             <a href="/users" class="nav-link align-middle px-0">
@@ -28,14 +29,14 @@
                         </li>
                     </ul>
                     <hr>
-                    <a href="/profile" class="d-flex align-items-center text-white text-decoration-none">
+                    <a href="/profile?id=<?= $this->meta[1][0]["id"]; ?>" class="d-flex align-items-center text-white text-decoration-none">
                         <img src="<?= $this->meta[1][0]["avatar"]; ?>" alt="hugenerd" width="30" height="30" class="rounded-circle">
                         <span class="d-none d-sm-inline mx-3"><?= $this->meta[1][0]["name"]; ?></span>
                     </a>
                     <div class="dropdown pb-4"></div>
                     <ul class="nav nav-pills flex-column mb-sm-4 mb-0 align-items-center align-items-sm-start">
                         <li class="nav-item">
-                            <i class="fs-4 bi-speedometer2"></i> <span class="ms-1 d-none d-sm-inline">Онлайн: <?= $data[0][0]["count"]; ?></span>
+                            <i class="fs-4 bi-speedometer2"></i> <label class="ms-1 d-none d-sm-inline">Онлайн: <?= $data[0][0]["count"]; ?></label>
                         </li>
                     </ul>
                 </div>
@@ -52,6 +53,7 @@
                                                 <tr>
                                                     <th><span>№</span></th>
                                                     <th><span>Пользователь</span></th>
+                                                    <th><span>Права</span></th>
                                                     <th><span>Телефон</span></th>
                                                     <th><span>Email</span></th>
                                                     <th class="text-center"><span>Статус</span></th>

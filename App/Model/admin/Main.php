@@ -9,7 +9,7 @@ class Main extends Model
 {
     public function getAllDataUsers()
     {
-        return R::getAll("SELECT * FROM users, data WHERE users.id = data.user_id");
+        return R::getAll("SELECT * FROM users, data WHERE users.id = data.user_id ORDER BY users.id ASC");
     }
 
     public function getUserById($id)

@@ -10,6 +10,8 @@ Router::add("/auth_login", ["controller" => "auth", "method" => "login", "prefix
 Router::add("/auth_loginAdmin", ["controller" => "auth", "method" => "loginAdmin", "prefix" => "auth"]);
 
 Router::add("/auth_create", ["controller" => "auth", "method" => "create_user", "prefix" => "auth"]);
+Router::add("/auth_edit", ["controller" => "auth", "method" => "edit_user", "prefix" => "auth"]);
+Router::add("/delete", ["controller" => "auth", "method" => "delete", "prefix" => "auth"]);
 
 Router::add("/", ["controller" => "main", "method" => "index", "prefix" => '']);
 Router::add("/out", ["controller" => "main", "method" => "out", "prefix" => '']);
@@ -21,3 +23,4 @@ Router::add("/registration", ["controller" => "user", "method" => "page_register
 
 Router::add("/create", ["controller" => "user", "method" => "create_user", "prefix" => '']);
 Router::add("/profile", ["controller" => "user", "method" => "page_profile", "prefix" => '']);
+Router::add("/edit", ["controller" => "user", "method" => "edit", "prefix" => '']);

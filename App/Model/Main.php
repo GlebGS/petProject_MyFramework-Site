@@ -7,5 +7,5 @@ use Core\Model;
 
 class Main extends Model
 {
-    
+        
 }

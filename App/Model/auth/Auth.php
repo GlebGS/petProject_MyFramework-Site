@@ -4,6 +4,7 @@ namespace App\Model\Auth;
 
 use RedBeanPHP\R;
 use Core\Model;
+use RedBeanPHP\Driver\RPDO;
 
 class Auth extends Model
 {
@@ -65,5 +66,26 @@ class Auth extends Model
         $data->user_id = R::store($users);
 
         R::store($data);
+    }
+
+    public function editById($post, $id)
+    {
+        $users = R::load( "users", $id);
+        $users->name        = h($post["name"]);
+        $users->role        = h($post["role"]);
+        
+        $data = R::load( "data", $id);
+        $data->work         = h($post["work"]);
+        $data->phone        = h($post["phone"]);
+        $data->address      = h($post["address"]);
+        
+        $data->user->id     = R::store($users);
+
+        R::store($data);
+    }
+
+    public function delete($id)
+    {        
+        return R::trashAll( [R::findOne("users", "id = ?", array($id)), R::findOne("data", "user_id = ?", array($id))] );
     }
 }

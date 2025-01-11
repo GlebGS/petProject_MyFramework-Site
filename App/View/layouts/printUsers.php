@@ -13,7 +13,7 @@
                             <i class="fal fa-angle-down d-inline-block ml-1 fs-md"></i>
                         </a>
                         <div class="dropdown-menu">
-                            <a class="dropdown-item" href="edit.html">
+                            <a class="dropdown-item" href="/edit?id=<?= $user["id"]; ?>">
                                 <i class="fa fa-edit"></i>
                                 Редактировать</a>
                             <a class="dropdown-item" href="security.html">
@@ -25,10 +25,6 @@
                             <a class="dropdown-item" href="media.html">
                                 <i class="fa fa-camera"></i>
                                 Загрузить аватар
-                            </a>
-                            <a href="#" class="dropdown-item" onclick="return confirm('are you sure?');">
-                                <i class="fa fa-window-close"></i>
-                                Удалить
                             </a>
                         </div>
                         <span class="text-truncate text-truncate-xl"><?= $user["work"]; ?></span>

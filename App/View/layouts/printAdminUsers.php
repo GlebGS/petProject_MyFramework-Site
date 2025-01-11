@@ -27,6 +27,10 @@
         </td>
 
         <td>
+            <span> <?= $user["role"]; ?></span>
+        </td>
+
+        <td>
             <span> <?= $user["phone"]; ?></span>
         </td>
 
@@ -41,19 +45,19 @@
             <?= $user["date"]; ?>
         </td>
         <td style="width: 20%;">
-            <a href="#" class="table-link text-warning">
+            <a href="/profile?id=<?= $user["id"]; ?>" class="table-link text-warning">
                 <span class="fa-stack">
                     <i class="fa fa-square fa-stack-2x"></i>
                     <i class="fa fa-search-plus fa-stack-1x fa-inverse"></i>
                 </span>
             </a>
-            <a href="#" class="table-link text-info">
+            <a href="/edit?id=<?= $user["id"]; ?>" class="table-link text-info">
                 <span class="fa-stack">
                     <i class="fa fa-square fa-stack-2x"></i>
                     <i class="fa fa-pencil fa-stack-1x fa-inverse"></i>
                 </span>
             </a>
-            <a href="#" class="table-link danger">
+            <a href="/delete?id=<?= $user["id"]; ?>" class="table-link danger" onclick="return confirm('Вы уверены что хотите удалить пользователя?');">
                 <span class="fa-stack">
                     <i class="fa fa-square fa-stack-2x"></i>
                     <i class="fa fa-trash-o fa-stack-1x fa-inverse"></i>

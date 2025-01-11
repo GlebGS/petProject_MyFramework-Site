@@ -123,4 +123,16 @@ class AuthController extends Controller
 
         redirect_to("/create");
     }
+
+    public function edit_user()
+    {
+        self::$model->editById($_POST, $_GET["id"]);
+        redirect_to("/edit?id={$_GET['id']}");
+    }
+
+    public function delete()
+    {
+        self::$model->delete($_GET["id"]);
+        redirect_to("/admin/menu");
+    }
 }
