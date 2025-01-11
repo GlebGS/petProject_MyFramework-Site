@@ -28,4 +28,12 @@ class UserController extends Controller
     public function edit(){
         $this->setMeta("Редактировать", [], self::$model->getUserById($_GET["id"]));
     }
+
+    public function status(){
+        $this->setMeta("Изменить статус", [], self::$model->getUserById($_GET["id"]));
+    }
+
+    public function avatar(){
+        $this->setMeta("Изменить аватар", [], self::$model->getUserById($_GET["id"]));
+    }
 }

@@ -19,10 +19,10 @@
                             <a class="dropdown-item" href="security.html">
                                 <i class="fa fa-lock"></i>
                                 Безопасность</a>
-                            <a class="dropdown-item" href="status.html">
+                            <a class="dropdown-item" href="/status?id=<?= $user["id"]; ?>">
                                 <i class="fa fa-sun"></i>
                                 Установить статус</a>
-                            <a class="dropdown-item" href="media.html">
+                            <a class="dropdown-item" href="/edit_avatar?id=<?= $user["id"]; ?>">
                                 <i class="fa fa-camera"></i>
                                 Загрузить аватар
                             </a>

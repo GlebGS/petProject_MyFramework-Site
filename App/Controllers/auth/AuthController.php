@@ -55,8 +55,8 @@ class AuthController extends Controller
         {
             if(password_verify($_POST["password"], $user->password))
             {
-                $_SESSION["userID"] = $user->id; 
-                $_SESSION["userROLE"] = $user->role;
+                $_SESSION["userID"]         = $user->id; 
+                $_SESSION["userROLE"]       = $user->role;
 
                 redirect_to("/users");
             }
@@ -82,8 +82,8 @@ class AuthController extends Controller
                 redirect_to("/admin");
             }
 
-            $_SESSION["userID"] = $user->id; 
-            $_SESSION["userROLE"] = $user->role;
+            $_SESSION["userID"]         = $user->id; 
+            $_SESSION["userROLE"]       = $user->role;
 
             redirect_to("/admin/menu");
         }
@@ -127,7 +127,19 @@ class AuthController extends Controller
     public function edit_user()
     {
         self::$model->editById($_POST, $_GET["id"]);
-        redirect_to("/edit?id={$_GET['id']}");
+        redirect_to("/edit?id={$_GET["id"]}");
+    }
+
+    public function edit_status()
+    {
+        self::$model->editStatusById($_POST, $_GET["id"]);
+        redirect_to("/status?id={$_GET["id"]}");
+    }
+
+    public function auth_edit_avatar()
+    {
+        self::$model->editAvatar($_FILES["file"], $_GET["id"]);
+        redirect_to("/edit_avatar?id={$_GET["id"]}");
     }
 
     public function delete()
