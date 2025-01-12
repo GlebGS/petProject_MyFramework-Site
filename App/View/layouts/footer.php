@@ -5,8 +5,8 @@
             </div>
             <div>
                 <ul class="list-table m-0">
-                    <li><a href="intel_introduction.html" class="text-secondary fw-700">Home</a></li>
-                    <li class="pl-3"><a href="info_app_licensing.html" class="text-secondary fw-700">About</a></li>
+                    <li><a href="/users" class="text-secondary fw-700">Home</a></li>
+                    <li class="pl-3"><a href="/users" class="text-secondary fw-700">About</a></li>
                 </ul>
             </div>
         </footer>

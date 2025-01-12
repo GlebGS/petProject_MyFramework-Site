@@ -1,5 +1,6 @@
 <!doctype html>
 <html class="no-js" lang="en">
+
 <head>
     <meta charset="utf-8">
     <title><?= $this->meta["title"]; ?></title>
@@ -7,7 +8,14 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" type="text/css" href="//netdna.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+
+    <link rel="stylesheet" type="text/css" href="/css/style_menuAdmin.css">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.3.0/css/bootstrap.min.css">
+    <link rel='stylesheet' href='https://cdn.datatables.net/1.13.5/css/dataTables.bootstrap5.min.css'>
+    <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.6.3/css/font-awesome.min.css'>
 </head>
+
 <body>
     <div class="container-fluid">
         <div class="row flex-nowrap">
@@ -48,23 +56,7 @@
                             <div class="main-box no-header clearfix">
                                 <div class="main-box-body clearfix">
                                     <div class="table-responsive">
-                                        <table class="table user-list">
-                                            <thead>
-                                                <tr>
-                                                    <th><span>№</span></th>
-                                                    <th><span>Пользователь</span></th>
-                                                    <th><span>Права</span></th>
-                                                    <th><span>Телефон</span></th>
-                                                    <th><span>Email</span></th>
-                                                    <th class="text-center"><span>Статус</span></th>
-                                                    <th><span>Дата регистрации</span></th>
-                                                    <th><span>&ensp;</span></th>
-                                                </tr>
-                                            </thead>
-                                            <tbody>
-                                                <?php $this->printAdminUsers(); ?>
-                                            </tbody>
-                                        </table>
+                                        <?php $this->printAdminUsers(); ?>
                                     </div>
                                 </div>
                             </div>
@@ -74,5 +66,31 @@
             </div>
         </div>
     </div>
+
+    <script src='https://code.jquery.com/jquery-3.7.0.js'></script>
+    <script src='https://cdn.datatables.net/1.13.5/js/jquery.dataTables.min.js'></script>
+    <script src='https://cdn.datatables.net/responsive/2.1.0/js/dataTables.responsive.min.js'></script>
+    <script src='https://cdn.datatables.net/1.13.5/js/dataTables.bootstrap5.min.js'></script>
+
+    <script>
+        $(document).ready(function() {
+            $('#example').DataTable({
+                "columnDefs": [
+                    { "orderable": false, "targets": 5 }
+                ],
+                language: {
+                    'paginate': {
+                    'previous': '<span class="fa fa-chevron-left"></span>',
+                    'next': '<span class="fa fa-chevron-right"></span>'
+                },
+                "lengthMenu": 'Display <select class="form-control input-sm">'+
+                    '<option value="5">5</option>'+
+                    '<option value="10">10</option>'+
+                    '<option value="15">15</option>'+
+                    '</select> results'
+                }
+            })
+        });
+    </script>
 </body>
 </html>
