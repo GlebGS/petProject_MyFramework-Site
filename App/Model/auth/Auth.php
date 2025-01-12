@@ -26,6 +26,11 @@ class Auth extends Model
         return R::count("users", "email = ?", array($data["email"]));
     }
 
+    public function verifyPhone($data)
+    {
+        return R::count("data", "phone = ?", array($data["phone"]));
+    }
+
     public function getUser($data)
     {
         return R::findOne("users", "email = ?", array($data["email"]));

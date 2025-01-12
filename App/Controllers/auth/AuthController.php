@@ -111,6 +111,12 @@ class AuthController extends Controller
             return redirect_to("/create");
         }
 
+        if(self::$model->verifyPhone($_POST))
+        {
+            $_SESSION["error"] = "<strong>Уведомление!</strong> Пользователь с таким номером телефона уже существует.";
+            return redirect_to("/create");
+        }
+
         if(mb_strlen($_POST["password"]) < 8)
         {
             $_SESSION["error"] = "<strong>Уведомление!</strong> Короткий пароль! Минимум 8 символов.";
@@ -121,24 +127,38 @@ class AuthController extends Controller
 
         $_SESSION["true"] = "Пользователь успешно добавлен.";
 
-        redirect_to("/create");
+        redirect_to("/create"); 
     }
 
     public function edit_user()
     {
+        if(strlen($_POST["phone"]) < 15)
+        {
+            $_SESSION["error"] = "<strong>Уведомление!</strong> Короткий номер телефона.";
+            return redirect_to("/edit?id={$_GET["id"]}");
+        }
         self::$model->editById($_POST, $_GET["id"]);
+
+        $_SESSION["true"] = "Данные успешно изменены.";
+
         redirect_to("/edit?id={$_GET["id"]}");
     }
 
     public function edit_status()
     {
         self::$model->editStatusById($_POST, $_GET["id"]);
+
+        $_SESSION["true"] = "Данные успешно изменены.";
+
         redirect_to("/status?id={$_GET["id"]}");
     }
 
     public function auth_edit_avatar()
     {
         self::$model->editAvatar($_FILES["file"], $_GET["id"]);
+
+        $_SESSION["true"] = "Данные успешно изменены.";
+
         redirect_to("/edit_avatar?id={$_GET["id"]}");
     }
 

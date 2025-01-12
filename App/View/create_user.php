@@ -45,7 +45,7 @@
 
                             <div class="form-group">
                                 <label class="form-label" for="simpleinput">Номер телефона</label>
-                                <input type="text" name="phone" id="simpleinput" class="form-control">
+                                <input type="text" name="phone" id="simpleinput" class="phone form-control">
                             </div>
 
 
@@ -105,11 +105,11 @@
 
 <script src="js/vendors.bundle.js"></script>
 <script src="js/app.bundle.js"></script>
+<script src="https://code.jquery.com/jquery-2.2.4.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.maskedinput/1.4.1/jquery.maskedinput.min.js"></script>
 <script>
-    $(document).ready(function() {
-
-
-    });
+    $(".phone").mask("+7(999)999-9999");
+    $(document).ready(function() {});
 </script>
 </body>
 

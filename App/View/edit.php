@@ -6,6 +6,21 @@
             <i class='subheader-icon fal fa-plus-circle'></i> Редактировать
         </h1>
     </div>
+    
+    <?php if (isset($_SESSION["error"])): ?>
+        <div class="alert alert-danger text-dark" role="alert">
+            <?php echo $_SESSION["error"];
+            unset($_SESSION["error"]); ?>
+        </div>
+    <?php endif; ?>
+    
+    <?php if (isset($_SESSION["true"])): ?>
+        <div class="alert alert-success">
+            <?php echo $_SESSION["true"];
+            unset($_SESSION["true"]); ?>
+        </div>
+    <?php endif; ?>
+
     <form action="/auth_edit?id=<?= $this->meta[1][0]["id"]; ?>" method="post">
         <div class="row">
             <div class="col-xl-6">
@@ -28,7 +43,7 @@
 
                             <div class="form-group">
                                 <label class="form-label" for="simpleinput">Номер телефона</label>
-                                <input type="text" name="phone" id="simpleinput" class="form-control" value="<?= $this->meta[1][0]["phone"]; ?>">
+                                <input type="text" name="phone" id="simpleinput" class="phone form-control" value="<?= $this->meta[1][0]["phone"]; ?>">
                             </div>
 
                             <div class="form-group">
@@ -48,10 +63,10 @@
 
                             <a class="dropdown-item" href="/status?id=<?= $this->meta[1][0]["id"]; ?>">
                                 <i class="fa fa-sun"></i>
-                                Установить статус</a>
+                                Изменить статус</a>
                             <a class="dropdown-item" href="/edit_avatar?id=<?= $this->meta[1][0]["id"]; ?>">
                                 <i class="fa fa-camera"></i>
-                                Загрузить аватар
+                                Изменить аватар
                             </a>
 
                             <div class="col-md-12 mt-3 d-flex flex-row-reverse">
@@ -67,7 +82,10 @@
 
 <script src="js/vendors.bundle.js"></script>
 <script src="js/app.bundle.js"></script>
+<script src="https://code.jquery.com/jquery-2.2.4.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.maskedinput/1.4.1/jquery.maskedinput.min.js"></script>
 <script>
+    $(".phone").mask("+7(999)999-9999");
     $(document).ready(function() {
 
         $('input[type=radio][name=contactview]').change(function() {

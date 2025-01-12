@@ -74,7 +74,7 @@
 
     <script>
         $(document).ready(function() {
-            $('#example').DataTable({
+            $('#table').DataTable({
                 "columnDefs": [
                     { "orderable": false, "targets": 5 }
                 ],
@@ -83,11 +83,10 @@
                     'previous': '<span class="fa fa-chevron-left"></span>',
                     'next': '<span class="fa fa-chevron-right"></span>'
                 },
-                "lengthMenu": 'Display <select class="form-control input-sm">'+
+                "lengthMenu": 'Показать <select class="form-control input-sm">'+
                     '<option value="5">5</option>'+
                     '<option value="10">10</option>'+
-                    '<option value="15">15</option>'+
-                    '</select> results'
+                    '</select>'
                 }
             })
         });

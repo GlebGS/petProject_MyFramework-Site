@@ -5,8 +5,15 @@
             <h1 class="subheader-title">
                 <i class='subheader-icon fal fa-image'></i> Загрузить аватар
             </h1>
-
         </div>
+
+        <?php if (isset($_SESSION["true"])): ?>
+            <div class="alert alert-success">
+                <?php echo $_SESSION["true"];
+                unset($_SESSION["true"]); ?>
+            </div>
+        <?php endif; ?>
+        
         <form action="/auth_edit_avatar?id=<?= $this->meta[1][0]["id"]; ?>" method="post" enctype="multipart/form-data">
             <div class="row">
                 <div class="col-xl-6">

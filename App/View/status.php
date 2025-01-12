@@ -5,8 +5,15 @@
             <h1 class="subheader-title">
                 <i class='subheader-icon fal fa-sun'></i> Установить статус
             </h1>
-
         </div>
+
+        <?php if (isset($_SESSION["true"])): ?>
+            <div class="alert alert-success">
+                <?php echo $_SESSION["true"];
+                unset($_SESSION["true"]); ?>
+            </div>
+        <?php endif; ?>
+        
         <form action="/auth_edit_status?id=<?= $this->meta[1][0]["id"]; ?>" method="post">
             <div class="row">
                 <div class="col-xl-6">
