@@ -167,4 +167,9 @@ class AuthController extends Controller
         self::$model->delete($_GET["id"]);
         redirect_to("/admin/menu");
     }
+
+    public function edit_security()
+    {
+        debug($_POST);
+    }
 }

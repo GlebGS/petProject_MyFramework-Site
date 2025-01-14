@@ -91,3 +91,12 @@
     );
 
     CREATE INDEX index_foreignkey_data_users ON "data" USING btree ("user_id");
+
+## Настройка reCAPTCHA
+
+- Создайте reCAPTCHA https://www.google.com/recaptcha/about/ и скопируйте ключ:
+- После чего вставьте в `data-sitekey="6LeMzbYqAAAAAOP4VClHvrmIW7mjuV_pTQ5fXVMY">` в файле [page_register.php](App/View/page_register.php)
+
+![alt text](reCAPTCHA_SETTING.png)
+
+

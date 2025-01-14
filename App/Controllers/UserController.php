@@ -36,4 +36,9 @@ class UserController extends Controller
     public function avatar(){
         $this->setMeta("Изменить аватар", [], self::$model->getUserById($_GET["id"]));
     }
+
+    public function security()
+    {
+        $this->setMeta("Изменить пароль", [], self::$model->getUserById($_GET["id"]));
+    }
 }
