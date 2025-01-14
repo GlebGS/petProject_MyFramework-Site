@@ -7,6 +7,13 @@
         }
     },
     "require": {
-        "gabordemooij/redbean": "^v5.7.4"
+        "gabordemooij/redbean": "^v5.7.4",
+        "twbs/bootstrap": "5.0.2"
+    },
+    "scripts": {
+        "post-update-cmd": [
+            "rm -rf Public/bootstrap",
+            "cp -R vendor/twbs/bootstrap/dist Public/bootstrap"
+        ]
     }
 }
