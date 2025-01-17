@@ -16,6 +16,6 @@ class App
         self::$app = Registry::getInstance();      
 
         Router::matchRoute($_SERVER["REQUEST_URI"]);
-    }
 
+    }
 }

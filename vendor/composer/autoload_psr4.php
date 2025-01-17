@@ -7,6 +7,8 @@ $baseDir = dirname($vendorDir);
 
 return array(
     'RedBeanPHP\\' => array($vendorDir . '/gabordemooij/redbean/RedBeanPHP'),
+    'PHPMailer\\PHPMailer\\' => array($vendorDir . '/phpmailer/phpmailer/src'),
+    'PHPMailer\\' => array($vendorDir . '/phpmailer/phpmailer/src'),
     'Core\\' => array($vendorDir . '/Core'),
     'Controllers\\' => array($baseDir . '/App/Controllers'),
     'App\\' => array($baseDir . '/App'),

@@ -26,6 +26,11 @@ class Auth extends Model
         return R::count("users", "email = ?", array($data["email"]));
     }
 
+    public function verifyPass($data)
+    {
+        return R::count("users", "email = ?", array($data["email"]));
+    }
+
     public function verifyPhone($data)
     {
         return R::count("data", "phone = ?", array($data["phone"]));
@@ -34,6 +39,11 @@ class Auth extends Model
     public function getUser($data)
     {
         return R::findOne("users", "email = ?", array($data["email"]));
+    }
+
+    public function getUserByID($id)
+    {
+        return R::findOne("users", "id = ?", array($id));
     }
 
     public function editAvatar($dataFILE, $id)
@@ -104,6 +114,14 @@ class Auth extends Model
         $data->user->id     = R::store($users);
 
         R::store($data);
+    }
+
+    public function editUserPass($post, $id)
+    {
+        $users              = R::load( "users", $id);
+        $users->password    = password_hash($post["password_confirmation"], PASSWORD_DEFAULT);
+
+        R::store($users);
     }
 
     public function editStatusById($post, $id)

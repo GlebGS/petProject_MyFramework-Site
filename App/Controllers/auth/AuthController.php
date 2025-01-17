@@ -2,8 +2,8 @@
 
 namespace App\Controllers\Auth;
 
-use RedBeanPHP\R;
 use Core\Controller;
+use Core\Mailer;
 
 class AuthController extends Controller
 {
@@ -168,8 +168,38 @@ class AuthController extends Controller
         redirect_to("/admin/menu");
     }
 
+    public function send_email($user, $data)
+    {
+        $mail = new Mailer();
+
+        if(!$mail)
+        {
+            throw new \Exception("Не удалось отправить письмо на почту.", 500); 
+        }
+
+        return $mail->sendMessagePass($user, $data);
+    }
+
     public function edit_security()
     {
-        debug($_POST);
+        $user = self::$model->getUserByID($_GET["id"]);
+
+        if(!password_verify($_POST["password"], $user->password))
+        {
+            $_SESSION["error"] = "<strong>Уведомление! </strong> Не верный пароль.";
+            return redirect_to("/security?id={$_GET["id"]}");
+        }elseif(mb_strlen($_POST["password_confirmation"]) < 8)
+        {
+            $_SESSION["error"] = "<strong>Уведомление! </strong> слишком короткий пароль.";
+            return redirect_to("/security?id={$_GET["id"]}");
+        }
+
+        self::$model->editUserPass($_POST, $_GET["id"]);
+
+        $_SESSION["true"] = "Праоль успешно изменён.";
+
+        $this->send_email(self::$model->getUserByID($_SESSION["userID"]), $_POST["password_confirmation"]);
+
+        return redirect_to("/security?id={$_GET["id"]}");
     }
 }

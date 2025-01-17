@@ -50,7 +50,7 @@
                 </td>
 
                 <td>
-                    <a href="#"><?= $user["email"]; ?></a>
+                    <a href="mailto:<?= $user["email"]; ?>"><?= $user["email"]; ?></a>
                 </td>
 
                 <td class="text-center">

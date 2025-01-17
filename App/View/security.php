@@ -6,6 +6,21 @@
                 <i class='subheader-icon fal fa-lock'></i> Безопасность
             </h1>
         </div>
+        
+        <?php if (isset($_SESSION["error"])): ?>
+            <div class="alert alert-danger text-dark" role="alert">
+                <?php echo $_SESSION["error"];
+                unset($_SESSION["error"]); ?>
+            </div>
+        <?php endif; ?>
+        
+        <?php if (isset($_SESSION["true"])): ?>
+            <div class="alert alert-success">
+                <?php echo $_SESSION["true"];
+                unset($_SESSION["true"]); ?>
+            </div>
+        <?php endif; ?>
+
         <form action="/auth_security?id=<?= $this->meta[1][0]["id"]; ?>" method="post">
             <div class="row">
                 <div class="col-xl-6">

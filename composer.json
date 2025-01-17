@@ -3,12 +3,14 @@
         "psr-4": {
             "App\\": "App",
             "Controllers\\": "App/Controllers",
-            "Core\\": "vendor/Core"
+            "Core\\": "vendor/Core",
+            "PHPMailer\\": "vendor/phpmailer/phpmailer/src"
         }
     },
     "require": {
         "gabordemooij/redbean": "^v5.7.4",
-        "twbs/bootstrap": "5.0.2"
+        "twbs/bootstrap": "5.0.2",
+        "phpmailer/phpmailer": "^6.9"
     },
     "scripts": {
         "post-update-cmd": [

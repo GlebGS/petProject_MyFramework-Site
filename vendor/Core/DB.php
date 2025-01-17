@@ -14,7 +14,7 @@ class DB
     {
         $db = require_once CONFIG . "/env.php";
 
-        R::setup($db["dsn"], $db['login'], $db['password']);
+        R::setup($db["data_base"]["dsn"], $db["data_base"]['login'], $db["data_base"]['password']);
 
         if(!R::testConnection())
         {
