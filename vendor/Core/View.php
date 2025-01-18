@@ -18,7 +18,6 @@ class View
 
         $view = lowerCamelCase($this->route["method"]);
         $view_prefix = '/' . $this->route["prefix"];
-
         $view_file = VIEW . $view_prefix . "/{$view}.php";
 
         if(is_file($view_file))

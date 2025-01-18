@@ -4,7 +4,6 @@ namespace Core;
 
 class ErrorHandler
 {
-
     public function __construct()
     {
         (DEBUG) ? error_reporting(-1) : error_reporting(0);

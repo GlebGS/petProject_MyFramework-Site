@@ -59,6 +59,7 @@ abstract class Controller
     {
         self::$data = $data;
     }
+    
     public static function setMeta($title = '', $users = [], $user = [], $pagination = 10)
     {
         self::$meta = [

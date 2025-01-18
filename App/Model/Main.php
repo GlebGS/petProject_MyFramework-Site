@@ -5,7 +5,4 @@ namespace App\Model;
 use RedBeanPHP\R;
 use Core\Model;
 
-class Main extends Model
-{
-        
-}
+class Main extends Model {}

@@ -69,11 +69,13 @@ class Auth extends Model
     public function createUser($post)
     {
         $users              = R::dispense("users");
+
         $users->name        = $post["name"];
         $users->email       = $post["email"];
         $users->password    = password_hash($post["password"], PASSWORD_DEFAULT);
 
         $data               = R::dispense("data");
+
         $data->work         = $post["work"];
         $data->phone        = $post["phone"];
         $data->address      = $post["address"];
@@ -103,10 +105,12 @@ class Auth extends Model
     public function editById($post, $id)
     {
         $users              = R::load( "users", $id);
+
         $users->name        = h($post["name"]);
         $users->role        = h($post["role"]);
         
         $data               = R::load( "data", $id);
+
         $data->work         = h($post["work"]);
         $data->phone        = h($post["phone"]);
         $data->address      = h($post["address"]);
@@ -119,6 +123,7 @@ class Auth extends Model
     public function editUserPass($post, $id)
     {
         $users              = R::load( "users", $id);
+
         $users->password    = password_hash($post["password_confirmation"], PASSWORD_DEFAULT);
 
         R::store($users);
@@ -127,6 +132,7 @@ class Auth extends Model
     public function editStatusById($post, $id)
     {
         $data               = R::load( "data", $id);
+        
         $data->status       = h($post["status"]);
         
         R::store($data);

@@ -16,20 +16,20 @@
         <?php foreach ($this->meta[0] as $user): ?>
 
             <?php
-            switch ($user["status"]) {
-                case "danger":
-                    $user["status"] = "Не беспокоить";
-                    break;
-                case "warning":
-                    $user["status"] = "Отошёл";
-                    break;
-                case "success":
-                    $user["status"] = "Онлайн";
-                    break;
-                default:
-                    $user["status"] = "Не беспокоить";
-                    break;
-            }
+                switch ($user["status"]) {
+                    case "danger":
+                        $user["status"] = "Не беспокоить";
+                        break;
+                    case "warning":
+                        $user["status"] = "Отошёл";
+                        break;
+                    case "success":
+                        $user["status"] = "Онлайн";
+                        break;
+                    default:
+                        $user["status"] = "Не беспокоить";
+                        break;
+                }
             ?>
 
             <tr>
@@ -80,6 +80,7 @@
                     </a>
                 </td>
             </tr>
+            
         <?php endforeach; ?>
 
     </tbody>

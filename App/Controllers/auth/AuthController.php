@@ -90,14 +90,7 @@ class AuthController extends Controller
 
         redirect_to("/admin");
     }
-
-    public function statusController() 
-    {
-        debug($_FILES);
-
-        debug(IMG . "/" . $_FILES["file"]["name"]);
-    }
-
+    
     public function create_user()
     {
         if(mb_strlen($_POST["name"]) < 4){
@@ -137,6 +130,7 @@ class AuthController extends Controller
             $_SESSION["error"] = "<strong>Уведомление!</strong> Короткий номер телефона.";
             return redirect_to("/edit?id={$_GET["id"]}");
         }
+
         self::$model->editById($_POST, $_GET["id"]);
 
         $_SESSION["true"] = "Данные успешно изменены.";
@@ -177,7 +171,7 @@ class AuthController extends Controller
             throw new \Exception("Не удалось отправить письмо на почту.", 500); 
         }
 
-        return $mail->sendMessagePass($user, $data);
+        return $mail->sendMessage($user, $data);
     }
 
     public function edit_security()

@@ -13,7 +13,7 @@
                 unset($_SESSION["error"]); ?>
             </div>
         <?php endif; ?>
-        
+
         <?php if (isset($_SESSION["true"])): ?>
             <div class="alert alert-success">
                 <?php echo $_SESSION["true"];
@@ -31,13 +31,11 @@
                             </div>
                             <div class="panel-content">
 
-                                <!-- password -->
                                 <div class="form-group">
                                     <label class="form-label" for="simpleinput">Пароль</label>
                                     <input type="password" name="password" id="simpleinput" class="form-control">
                                 </div>
 
-                                <!-- password confirmation-->
                                 <div class="form-group">
                                     <label class="form-label" for="simpleinput">Подтверждение пароля</label>
                                     <input type="password" name="password_confirmation" id="simpleinput" class="form-control">
@@ -81,7 +79,6 @@
 
                 });
 
-                //initialize filter
                 initApp.listFilter($('#js-contacts'), $('#js-filter-contacts'));
         });
 
