@@ -154,6 +154,10 @@ CREATE TABLE "users"(
 - Создайте [reCAPTCHA](https://www.google.com/recaptcha/about/) и скопируйте ключ:
 - После чего вставьте в `data-sitekey="6LeMzbYqAAAAAOP4VClHvrmIW7mjuV_pTQ5fXVMY">` в файле [page_register.php](App/View/page_register.php)
 
+<details><summary><b>Скриншот reCaptcha</b></summary>
+
 ![alt text](pet_image/reCAPTCHA_SETTING.png)
+
+</details>
 
 
