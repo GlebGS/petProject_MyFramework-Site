@@ -2,24 +2,24 @@
 
 return [
     "data_base" =>[
-        "dsn" => "pgsql:host=127.0.0.1;dbname=marlindev_oop",
+        "dsn" => "pgsql:host=127.0.0.1;dbname=DB",
         "db" => "pgsql",
-        "db_name" => "marlindev_oop",
+        "db_name" => "DB",
         "host" => "127.0.0.1",
         "port" => "5432",
-        "login" => "postgres",
-        "password" => "gk8h8v4ot"
+        "login" => "user",
+        "password" => "password"
     ],
 
     "mail_setting" => [
         "mailer" => "smtp",
-        "admin_mail" => "grig0riev9@yandex.ru",
+        "admin_mail" => "test@yandex.ru",
         "SMTPDebug" => 2,
         "SMTPAuth" => true,
         "SMTPSecure" => "ssl",
         "mail_host" => "ssl://smtp.yandex.ru",
         "mail_port" => 465,
-        "mail_login" => "grig0riev9@yandex.ru",
-        "mail_password" => "pgnrozeotjizdxzr"
+        "mail_login" => "test@yandex.ru",
+        "mail_password" => "password"
     ]
 ];
